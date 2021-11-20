@@ -2,7 +2,7 @@
 
 ##
 
-Odkaz pro stažení programu v exe [stáhnout](https://drive.google.com/drive/folders/1A5VHlYiyvwDjOgxFwTZZQJIASC4vsIzR?usp=sharing)
+Odkaz pro stažení programu v exe (64bit windows) [stáhnout](https://drive.google.com/drive/folders/1A5VHlYiyvwDjOgxFwTZZQJIASC4vsIzR?usp=sharing)
 
 ##
 

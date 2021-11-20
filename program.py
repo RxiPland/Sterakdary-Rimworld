@@ -1,5 +1,6 @@
-# Udělal RxiPland
+#!/bin/python3
 
+# Udělal RxiPland
 # 2021
 
 # Tohle není Sterakův program, pouze napodobenina

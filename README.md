@@ -5,7 +5,7 @@ Jednoduchý program, který sterakdary používal, když streamoval rimworld. Sl
 Doporučuji si dát program do složky, protože na stejném místě, kde je program, se vytvoří databáze
 
 
-Knihovny:
+Použité knihovny:
 
 pip install PyDirectInput
 pip install PyQt5

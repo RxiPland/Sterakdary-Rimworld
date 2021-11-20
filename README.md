@@ -12,3 +12,5 @@ pip install PyQt5
 pip install sqlite3
 pip install random2
 ```
+
+Sterakdary: [YouTube](https://www.youtube.com/c/TenSterakdary/) [Twitch](https://www.twitch.tv/tensterakdary/)

@@ -3,7 +3,7 @@ Jednoduchý program, který Sterakdary používal, když streamoval Rimworld. Sl
 
 ##
 Doporučuji si dát program do složky, protože na stejném místě, kde je program, se vytvoří databáze
-
+##
 
 # Použité knihovny:
 ```

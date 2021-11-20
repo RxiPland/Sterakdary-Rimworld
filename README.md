@@ -13,7 +13,8 @@ pip install sqlite3
 pip install random2
 ```
 
-Sterakdary:
+# Sterakdary:
 
-[YouTube](https://www.youtube.com/c/TenSterakdary/) 
-[Twitch](https://www.twitch.tv/tensterakdary/)
+> [YouTube](https://www.youtube.com/c/TenSterakdary/)
+> 
+> [Twitch](https://www.twitch.tv/tensterakdary/)

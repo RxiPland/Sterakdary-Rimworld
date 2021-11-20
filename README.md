@@ -20,6 +20,6 @@ pip install random2
 > [Twitch](https://www.twitch.tv/tensterakdary/)
 
 
-# Náhled
+# Náhled:
 
 ![screen](https://user-images.githubusercontent.com/82058894/142740582-bca6c879-474e-47f0-bf33-dd449c5b4782.png)

@@ -6,8 +6,9 @@ Doporučuji si dát program do složky, protože na stejném místě, kde je pro
 
 
 Použité knihovny:
-
+```
 pip install PyDirectInput
 pip install PyQt5
 pip install sqlite3
 pip install random2
+```

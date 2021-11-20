@@ -20,6 +20,10 @@ pip install random2
 > [YouTube](https://www.youtube.com/c/TenSterakdary/)
 > 
 > [Twitch](https://www.twitch.tv/tensterakdary/)
+> 
+> [Web](https://sterakdary.eu/)
+>
+
 
 
 # Náhled:

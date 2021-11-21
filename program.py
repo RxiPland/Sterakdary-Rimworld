@@ -1,5 +1,3 @@
-#!/bin/python3
-
 # Udělal RxiPland
 # 2021
 

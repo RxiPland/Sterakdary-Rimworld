@@ -24,15 +24,18 @@ class Ui_MainWindow(object):
             sqlstr = 'SELECT * FROM tabulka'
 
             tablerow=0
+            pocetRadku=1
             results = cur.execute(sqlstr)
 
-            self.tableWidget.setRowCount(500)
+            self.tableWidget.setRowCount(pocetRadku)
 
             for row in results:
+                self.tableWidget.setRowCount(pocetRadku)
                 self.tableWidget.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row[0]))
                 self.tableWidget.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(row[1]))
                 self.tableWidget.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(row[2]))
                 tablerow+=1
+                pocetRadku = tablerow+1
 
             self.lineEdit_2.clear()
             self.lineEdit.clear()
@@ -193,7 +196,7 @@ class Ui_MainWindow(object):
             
 
         if (self.lineEdit.text()) == "":
-            sub = 1
+            
             return
 
         else:
@@ -203,12 +206,13 @@ class Ui_MainWindow(object):
                 sub = int(self.lineEdit.text())
             
             except:
+
                 return
         
         stav ='Ano'
         
         if sub <=0:
-            self.lineEdit_2.clear()
+
             self.lineEdit.clear()
             return
       

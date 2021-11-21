@@ -5,7 +5,7 @@
 
 import pydirectinput
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QAbstractItemView
+from PyQt5.QtWidgets import QAbstractItemView, QMessageBox
 import sqlite3
 import random
 
@@ -25,6 +25,7 @@ class Ui_MainWindow(object):
 
             tablerow=0
             results = cur.execute(sqlstr)
+
             self.tableWidget.setRowCount(500)
 
             for row in results:
@@ -45,6 +46,61 @@ class Ui_MainWindow(object):
             connection.commit()
             cur.close()
             self.loaddata()
+    
+    #zkontroluje jestli v databázi není stejné jméno - pokud ano, dá uživateli na výběr, jestli je chce spojit / zrušit akci
+
+    def kontrolaStejnehoJmena(self):
+
+        global cislo1
+
+        try:
+                global tablerow
+                global vsechnaJmena
+
+                vsechnaJmena = []
+
+                tablerow = int(tablerow)
+
+                for radky in range(tablerow):
+
+                    sloupecJmen = str(self.tableWidget.item(radky, 0).text())
+                    vsechnaJmena.append(sloupecJmen)
+
+
+        except:
+
+            return
+
+        if text in vsechnaJmena:
+
+            global Jmeno4
+
+            Jmeno4 = text
+
+            msgBox = QMessageBox()
+            msgBox.setIcon(QMessageBox.Question)
+            msgBox.setWindowTitle("Problém")
+            msgBox.setText("Toto jméno se zde již nachází!")
+            msgBox.setStandardButtons(QMessageBox.Yes|QMessageBox.No)
+            buttonY = msgBox.button(QMessageBox.Yes)
+            buttonY.setText("Spojit")
+            buttonN = msgBox.button(QMessageBox.No)
+            buttonN.setText("Zrušit")
+
+            returnValue = msgBox.exec()
+            if returnValue == QMessageBox.Yes:
+
+                cislo1 = 3
+
+
+            elif returnValue == QMessageBox.No:
+
+                cislo1 = 2
+
+
+        else:
+
+            cislo1 = 1
 
 
     #push button 2 enter - spustí se, když uživatel dá enter pro odeslání jména a počtu subů, namísto ručního stisknutí tlačítka přidat
@@ -64,6 +120,8 @@ class Ui_MainWindow(object):
     
     def button2(self):
 
+        global text, sub
+
         self.label_3.setHidden(True)
 
         global ZmacknutejEnter
@@ -72,15 +130,76 @@ class Ui_MainWindow(object):
             self.lineEdit_2.clear()
             self.lineEdit.clear()
             return
+
         else:
+            
+            #pokud line edit 2 nebude prazdna, zkontroluje se jestli není už jméno v databázi, pokud ne (číslo 1), pojede normálně dál
+
             text = self.lineEdit_2.text()
+
+            self.kontrolaStejnehoJmena()
+
+            if cislo1 == 1:
+
+                #v databázi není - pokračovat
+
+                pass
+
+            elif cislo1 == 2:
+
+                #zrušit
+
+                return
+
+            elif cislo1 == 3:
+
+                #spojit
+
+                pocetSubu = ""
+
+                connection = sqlite3.connect('databaze.db')
+                cur = connection.cursor()
+
+                sqlstr = ("SELECT * FROM tabulka WHERE Jméno='{Jmeno4}'").format(Jmeno4=Jmeno4)
+
+                results = cur.execute(sqlstr)
+
+
+                pocetSubuRaw = [item[1] for item in results.fetchall()]
+
+                pocetSubu = pocetSubuRaw[0]
+
+                pocetSubu = int(pocetSubu)
+
+                sub = int(self.lineEdit.text())
+
+                pocetSubu = pocetSubu + sub
+
+                sqlite_delete_query = ("DELETE from tabulka where Jméno='{Jmeno4}'".format(Jmeno4=Jmeno4))
+
+                cur.execute(sqlite_delete_query)
+
+
+                sqlite_insert_query = "insert into tabulka(Jméno, '#', Aktivní) values(?, ?, ?)"
+
+                val = Jmeno4, pocetSubu, "Ano"
+
+                cur.execute(sqlite_insert_query, val)
+                connection.commit()
+                cur.close()
+                self.loaddata()
+
+                return
             
 
         if (self.lineEdit.text()) == "":
             sub = 1
             return
+
         else:
+
             try:
+                
                 sub = int(self.lineEdit.text())
             
             except:
@@ -126,6 +245,7 @@ class Ui_MainWindow(object):
             pass
 
         self.loaddata()
+
 
 
     #push button - změnit aktivitu
@@ -239,6 +359,9 @@ class Ui_MainWindow(object):
         except:
 
             return
+
+    #pomůcka pro změnění aktivity
+    #využívá se v button(self)
 
     def zmenitAktivitu(self):
 

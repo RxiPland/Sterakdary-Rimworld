@@ -1,4 +1,4 @@
-(Tohle není Sterakův program! Pouze napodobenina, kterou jsem ve volném čase naprogramoval v pythonu. Také bych se chtěl omluvit za zbytečný kód navíc, pokud by tam nějaký byl, nejsem ještě tak zkušený)
+(Tohle není Sterakův program, pouze napodobenina! Je to jeden z mých větších projektů, takže se tam mohou nacházet chyby.)
 
 ##
 

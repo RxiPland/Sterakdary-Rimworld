@@ -2,8 +2,10 @@
 
 ##
 
-Odkaz pro stažení programu v exe (64bit windows) [stáhnout](https://drive.google.com/drive/folders/1A5VHlYiyvwDjOgxFwTZZQJIASC4vsIzR?usp=sharing)
-
+Odkaz pro stažení programu v exe (64bit windows) [stáhnout](https://github.com/RxiPland/Sterakdary-Rimworld/releases/download/v1.0/program.exe)
+<br/>
+<br/>
+`cf9f4f461000c8809bd812b8d845decbfdaca077e8b7e70577c0a6569932becc` (SHA256)
 ##
 
 # Sterakdary-Rimworld

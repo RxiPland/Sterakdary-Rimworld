@@ -1,4 +1,4 @@
-(Tohle není Sterakův program, pouze napodobenina! Je to jeden z mých větších projektů, takže se tam mohou nacházet chyby.)
+(Tohle není Sterakův program, pouze napodobenina! Je to jeden z mých prvních větších projektů, takže se tam mohou nacházet chyby.)
 
 ##
 

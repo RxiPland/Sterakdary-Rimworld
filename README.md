@@ -19,8 +19,6 @@ Doporučuji si dát program do složky, protože na stejném místě, kde je pro
 ```
 pip install PyDirectInput
 pip install PyQt5
-pip install db-sqlite3
-pip install random2
 ```
 
 # Sterakdary:

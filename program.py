@@ -1,6 +1,8 @@
 # Udělal RxiPland
 # 2021
 
+# python 3.9.9
+
 # Tohle není Sterakův program, pouze napodobenina
 
 import pydirectinput
